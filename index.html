@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OSINT Intelligence Dashboard — Platform investigasi informasi publik untuk edukasi dan riset keamanan.">
+  <meta name="theme-color" content="#0a0e17">
+  <title>OSINT Intelligence Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🔍</text></svg>">
+
+  <!-- Leaflet CSS (for maps) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Mobile Overlay -->
+  <div class="sidebar-overlay"></div>
+
+  <div class="app-container">
+    <!-- ====== Sidebar ====== -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">🔍</div>
+        <div class="sidebar-title">
+          <h1>OSINT Intel</h1>
+          <span>Intelligence Dashboard</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Menu Utama</div>
+
+        <div class="nav-item active" data-module="dashboard">
+          <span class="nav-item-icon">🏠</span>
+          <span>Dashboard</span>
+        </div>
+
+        <div class="nav-section-title">Modul Investigasi</div>
+
+        <div class="nav-item" data-module="username">
+          <span class="nav-item-icon">👤</span>
+          <span>Pencarian Username</span>
+          <span class="nav-item-badge">120</span>
+        </div>
+
+        <div class="nav-item" data-module="email">
+          <span class="nav-item-icon">📧</span>
+          <span>Investigasi Email</span>
+        </div>
+
+        <div class="nav-item" data-module="phone">
+          <span class="nav-item-icon">📱</span>
+          <span>Nomor Telepon</span>
+        </div>
+
+        <div class="nav-item" data-module="image">
+          <span class="nav-item-icon">🖼️</span>
+          <span>Analisis Gambar</span>
+        </div>
+
+        <div class="nav-item" data-module="ip">
+          <span class="nav-item-icon">🌐</span>
+          <span>Geolokasi IP</span>
+        </div>
+
+        <div class="nav-item" data-module="domain">
+          <span class="nav-item-icon">🔗</span>
+          <span>Analisis Domain</span>
+        </div>
+
+        <div class="nav-item" data-module="social">
+          <span class="nav-item-icon">📱</span>
+          <span>Social Media</span>
+          <span class="nav-item-badge">BARU</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="sidebar-footer-text">
+          ⚠️ Untuk tujuan edukasi saja.<br>
+          Gunakan secara bertanggung jawab.
+        </p>
+      </div>
+    </aside>
+
+    <!-- ====== Main Content ====== -->
+    <main class="main-content">
+      <!-- Header -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn">☰</button>
+          <div class="header-breadcrumb">
+            <span>🔍 OSINT</span>
+            <span>/</span>
+            <span class="current">Dashboard</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="header-status">
+            <div class="status-dot"></div>
+            <span>SISTEM AKTIF</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <div class="page-content" id="page-content">
+        <!-- Content rendered by app.js -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container"></div>
+
+  <!-- Leaflet JS (for maps) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/utils/api.js"></script>
+  <script src="js/utils/ui.js"></script>
+  <script src="js/modules/username.js"></script>
+  <script src="js/modules/email.js"></script>
+  <script src="js/modules/phone.js"></script>
+  <script src="js/modules/image.js"></script>
+  <script src="js/modules/ip.js"></script>
+  <script src="js/modules/domain.js"></script>
+  <script src="js/modules/social.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
